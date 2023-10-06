@@ -1,0 +1,140 @@
+:root {/*伪类，表示文档根元素*/
+  --primary-color: #31c27c;
+}
+body {
+  margin: 0;
+  background: #f5f5f5;/*身体部分的背景色 */
+  font-family: Microsoft Yahei;/*字体样式*/
+  font-size: 14px;/*字体大小*/
+  /* min-width: 1000px; */
+}
+a {/*标签选择器*/
+  text-decoration: none;/*去除文本装饰*/
+  color: #000;/*文本颜色为黑*/
+}
+header {
+  height: 90px;
+  background: white;
+  display: flex;
+  align-items: center;/*flex子项在flex容器的当前行的纵轴方向对齐方式，元素位于容器的中心*/
+}
+.header-inner, main {
+  /* width: 1200px; */
+  padding: 20px;/*内边距，包围在内容区域外部的空白区域，大小通过padding相关属性设置*/
+  margin: auto;/*外边距，是盒子和其他元素之间的空白区域，大小通过margin相关属性设置*/
+}
+.tag-list {
+  margin-top: 50px;/*盒子与上边其他元素的空白区域*/
+  margin-bottom: 15px;/*盒子与下边其他元素的空白区域*/
+}
+.tag-item {
+  display: inline-block;/*内联盒子*/
+  padding: 0 8px;
+  margin-right: 24px;
+  line-height: 26px;/*设置行高*/
+  color: #000;
+  text-decoration: none;/*去除文本装饰*/
+}
+.tag-active {/*被选中的*/
+  background: var(--primary-color);/*var()函数用于插入自定义的属性值，如果一个属性值在多处被使用，该方法就很有用*/
+  color: white;
+}
+.tag-item:not(.tag-active):hover {/*鼠标指到*/
+  color: var(--primary-color);/*颜色变为root伪类中指定的颜色*/
+}
+.nowrap {
+  white-space: nowrap;/*文本不换行*/
+  overflow: hidden;/*溢出的内容会隐藏*/
+  text-overflow: ellipsis;/*当对象内文本溢出时显示省略标记(...)*/
+}
+.playlist {
+  display: grid;/*设置网格布局*/
+  grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+  /*grid-template-columns: 定义网格布局中的列数，并可定义每列的宽度*/
+  /*repeat(重复次数，重复值) 可简写重复的值*/
+  /*auto-fill 表示自动填充，让一行或一列中尽可能地容纳更多的单元*/
+  /*minmax(200px,1fr) 表示列宽不小于200px，不大于1fr*/
+  gap: 45px 15px;/*指的是column和row之间的间隔的大小，分别针对上下间距和左右间距*/
+  margin-bottom: 45px;
+}
+.cover-wrap {/*歌曲图片部分*/
+  display: flex;/*弹性布局*/
+  position: relative;/*relative相对定位，相对于默认位置(即static时位置)进行偏移，定位基点是元素默认位置。*/
+  overflow: hidden;
+  width: 100%;
+  margin-bottom: 15px;
+  align-items: center;
+  justify-content: center;/*弹性项目居中紧挨着填充*/
+  cursor: pointer;/*设置鼠标指针在元素上面的显示样式：一只小手*/
+}
+.cover-img {/*图片*/
+  width: 100%;
+  transition: all 0.75s;/*过渡 一种样式过渡到另一个样式 transition：要过渡的属性 花费时间*/
+}
+.cover-mask {
+  position: absolute;/*absolute绝对定位，它相对于祖先元素(一般是父元素)进行偏移。*/
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: #000;
+  opacity: 0;
+  transition: all 0.5s;/*过渡*/
+}
+.cover-play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -35px;/*padding值不能为负值，但margin值可为负值*/
+  margin-top: -35px;
+  opacity: 0;/*元素透明度 元素后面背景的被覆盖程度*/
+  transform: scale(0.7);/*变形属性缩放*/
+  transition: all 0.5s;
+}
+.cover-wrap:hover .cover-mask {
+  opacity: 0.2;
+}
+.cover-wrap:hover .cover-play {
+  opacity: 1;
+  transform: scale(1);/*变形属性缩放*/
+}
+.cover-wrap:hover .cover-img {
+  transform: scale(1.07);/*变形属性缩放*/
+}
+.album-title:hover {
+  color: var(--primary-color);
+}
+.album-author {
+  color: #999;
+  line-height: 1.6;/*行高*/
+}
+.album-author:hover {
+  color: var(--primary-color);
+}
+.album-time {
+  color: #999;
+}
+.page {
+  display: flex;
+  align-items: center;/*flex子项在flex容器的当前行的纵轴方向对齐方式，元素位于容器的中心*/
+  justify-content: center;/*弹性项目居中紧挨着填充*/
+}
+.page-item {
+  display: inline-block;/*内联盒子*/
+  color: #a2a2a2;
+  line-height: 50px;/*行高*/
+  padding: 0 20px;
+  margin: 10px;
+  font-size: 16px;
+}
+.page-current, .page-item:not(.page-more):hover {
+  background: var(--primary-color);
+  color: white;
+}
+footer {
+  margin-top: 60px;/*上外边距*/
+  background: #333;
+  height: 200px;
+}
+
+

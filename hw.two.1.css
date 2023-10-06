@@ -1,0 +1,59 @@
+html{
+    font-size:18px;
+}
+
+.registry caption{
+    text-align: left;
+    color:blue;
+    margin: 1rem;
+
+}
+.registry{
+    border-radius: 10px;
+    background-color: rgb(246, 249, 249);
+    width:30rem;
+    height: auto;
+    border:1px solid black;
+}
+.registry th{
+    text-align: right;
+    font-size: 1rem;
+}
+.registry tr{
+    width: 18rem;
+}
+.bottom{
+    margin-left: 10rem;
+}
+.registry span{
+    font-size: 0.5rem;
+}
+.registry td{
+    height: 1.5rem;
+    width: 7rem;
+}
+
+input,select {
+    text-align: left;
+    height: 1.5rem;
+  
+
+}
+.registry input {
+    height: 1.2rem;
+}
+#image-file {
+    height: auto;
+}
+#province{
+    width: 4.5rem;
+}
+#city{
+    width: 4.5rem;
+}
+#education{
+    width: 4.5rem;
+}
+#mydate{
+    width: 9rem;
+}
